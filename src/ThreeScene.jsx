@@ -10,22 +10,22 @@ const Model = () => {
 
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.005;
+      groupRef.current.rotation.y += 0.008;
     }
   });
 
   // Apply a color to the entire mesh
-  scene.getObjectByName('imagetostl_mesh0').material = new THREE.MeshStandardMaterial({ color: 'cyan' });
+  scene.getObjectByName('imagetostl_mesh0').material = new THREE.MeshStandardMaterial({ color: 'white' });
 
   return (
-    <group ref={groupRef} position={[-60, 0, -300]} rotation={[0, Math.PI / 2, 0]}>
+    <group ref={groupRef} position={[0, 0, -150]} rotation={[0, Math.PI / 2, 0]}>
       <primitive object={scene} />
     </group>
   );
 };
 
 const ThreeScene = () => {
-  const targetPosition = [-60, 0, -300];
+  const targetPosition = [0, 0, -150];
 
   return (
     <Canvas>
